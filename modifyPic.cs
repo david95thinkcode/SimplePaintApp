@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Esgis_Paint
 {
-    public partial class Form1 : Form
+    public partial class modifyPic : Form
     {
-        public Form1()
+        public modifyPic()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btn_print_Click(object sender, EventArgs e)
         {
 
         }

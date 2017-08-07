@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Esgis_Paint
 {
-    public partial class Form1 : Form
+    public partial class drawPic : Form
     {
-        public Form1()
+        public drawPic()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

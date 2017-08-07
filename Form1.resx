@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Erase_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Erase_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Print_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Print_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Erase_48px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Erase_48px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rotate Right_52px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Rotate Right_52px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit_80px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Edit_80px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Save_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Save_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Edit_80px_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Edit_80px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Rotate Left_52px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Rotate Left_52px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Eraser_80px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\res\Eraser_80px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>
