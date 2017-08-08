@@ -50,6 +50,7 @@
             // 
             // btn_pencil
             // 
+            this.btn_pencil.Image = ((System.Drawing.Image)(resources.GetObject("btn_pencil.Image")));
             this.btn_pencil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_pencil.Location = new System.Drawing.Point(12, 12);
             this.btn_pencil.Name = "btn_pencil";
