@@ -65,6 +65,7 @@
             this.btn_log.TabIndex = 3;
             this.btn_log.Text = "Journal";
             this.btn_log.UseVisualStyleBackColor = true;
+            this.btn_log.Click += new System.EventHandler(this.btn_log_Click);
             // 
             // btn_close
             // 

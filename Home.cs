@@ -1,5 +1,6 @@
 ﻿using Esgis_Paint.Models;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace Esgis_Paint
         {
             //Open the windows for drawing
             drawPic draw_Windows = new drawPic();
-            draw_Windows.Show();           
+            draw_Windows.Show();          
 
         }
 
@@ -38,12 +39,35 @@ namespace Esgis_Paint
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not implements yet");
+            OpenFileDialog OpenFile_dialog = new OpenFileDialog();
+            OpenFile_dialog.Title = "Choose a picture";
+            OpenFile_dialog.Multiselect = false;
+
+            // Set filter options and filter index.
+            OpenFile_dialog.Filter = "Images (*.BMP;*.JPG;*.PNG)|*.BMP;*.JPG;*.PNG";
+
+            //Open the file dialog
+            if (OpenFile_dialog.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo choice_info = new FileInfo(OpenFile_dialog.FileName);
+                
+                //Calling modifyPic and sending to it the picture info
+                modifyPic modifPage = new modifyPic();
+                modifPage.getImage(choice_info);
+                modifPage.Show();
+                
+            }
+            
         }
 
         private void Home_Shown(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_log_Click(object sender, EventArgs e)
+        {
+            log.openLogFile();
         }
     }
 }

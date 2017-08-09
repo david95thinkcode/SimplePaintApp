@@ -26,6 +26,13 @@ namespace Esgis_Paint.Models
                 writeHead();
         }
 
+        public void openLogFile()
+        {
+            //File.OpenRead(_filePath);
+            System.Diagnostics.Process.Start(_filePath);
+
+        }
+
         public void writeConnectionAction()
         {
             String data;
@@ -67,8 +74,8 @@ namespace Esgis_Paint.Models
         /// </summary>
         public void writeHead()
         {
-            String head = "DATE      " + " HOUR         " + " ACTION";
-            String underline = "----      " + " ----         " + " ------";
+            String head = "DATE      " + " HOUR         " + "ACTION";
+            String underline = "----      " + " ----         " + "------";
             try
             {
                 using (_writer = new StreamWriter(_filePath, true))

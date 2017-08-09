@@ -32,6 +32,8 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_rotateLeft = new System.Windows.Forms.Button();
             this.btn_rotateRight = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_print
@@ -71,6 +73,7 @@
             this.btn_rotateLeft.Text = "Pivoter à gauche";
             this.btn_rotateLeft.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_rotateLeft.UseVisualStyleBackColor = true;
+            this.btn_rotateLeft.Click += new System.EventHandler(this.btn_rotateLeft_Click);
             // 
             // btn_rotateRight
             // 
@@ -83,12 +86,25 @@
             this.btn_rotateRight.Text = "Pivoter à droite";
             this.btn_rotateRight.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_rotateRight.UseVisualStyleBackColor = true;
+            this.btn_rotateRight.Click += new System.EventHandler(this.btn_rotateRight_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 111);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(726, 401);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // modifyPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 515);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_rotateLeft);
@@ -96,6 +112,9 @@
             this.Name = "modifyPic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier une image";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.modifyPic_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -106,5 +125,6 @@
         private System.Windows.Forms.Button btn_rotateLeft;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
