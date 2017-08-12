@@ -23,21 +23,90 @@ namespace Esgis_Paint
             log.writeConnectionAction();
         }
 
+        #region Events
+        
+
+        private void Home_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        #region MenuTooltip
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nouveauDessinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenDrawWindows();
+        }
+
+        private void ouvrirUneImageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenPicture();
+        }
+
+        private void journalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenJournal();
+        }
+
+        private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DisconnectApp();
+        }
+        #endregion
+
+        #region Buttons 
+
         private void btn_new_Click(object sender, EventArgs e)
         {
-            //Open the windows for drawing
-            drawPic draw_Windows = new drawPic();
-            draw_Windows.Show();          
+            OpenDrawWindows();
+        }
 
+        private void btn_log_Click(object sender, EventArgs e)
+        {
+            OpenJournal();
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            log.writeDisconnectionAction();
-            this.Dispose();
+            DisconnectApp();
         }
 
         private void btn_open_Click(object sender, EventArgs e)
+        {
+            OpenPicture();
+        }
+
+        #endregion
+
+        #endregion
+
+
+        #region Requires methods
+
+        /// <summary>
+        /// Open the windows used to draw
+        /// </summary>
+        private void OpenDrawWindows()
+        {
+            drawPic draw_Windows = new drawPic();
+            draw_Windows.Show();
+        }
+
+        /// <summary>
+        /// Make the user choose a picture and open ModifPic Windows
+        /// </summary>
+        private void OpenPicture()
         {
             OpenFileDialog OpenFile_dialog = new OpenFileDialog();
             OpenFile_dialog.Title = "Choose a picture";
@@ -50,28 +119,33 @@ namespace Esgis_Paint
             if (OpenFile_dialog.ShowDialog() == DialogResult.OK)
             {
                 FileInfo choice_info = new FileInfo(OpenFile_dialog.FileName);
-                
+
                 //Calling modifyPic and sending to it the picture info
                 modifyPic modifPage = new modifyPic();
                 modifPage.getImage(choice_info);
-                modifPage.Show();                
+                modifPage.Show();
             }
-            
         }
 
-        private void Home_Shown(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btn_log_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Open the log file
+        /// </summary>
+        private void OpenJournal()
         {
             log.openLogFile();
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Close correctly the app
+        /// </summary>
+        private void DisconnectApp()
         {
-
+            log.writeDisconnectionAction();
+            this.Dispose();
         }
+
+        #endregion
+
+        
     }
 }
