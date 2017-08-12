@@ -25,35 +25,21 @@ namespace Esgis_Paint
             log = new Journal();
         }
 
-        //TODO : Finish it
         private void btn_save_Click(object sender, EventArgs e)
-        {
-            Stream mystream;
+        {   
             SaveFileDialog saveDialog = new SaveFileDialog();
 
             saveDialog.Filter = "Image (*.PNG)|*.PNG";
-            saveDialog.FilterIndex = 2;
+            //saveDialog.FilterIndex = 2;
             saveDialog.RestoreDirectory = true;
 
             //Showing and saving the picture
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
-                mystream = saveDialog.OpenFile();
-
-                if (mystream != null)
-                {
-                    /* //TODO: 
-                     * We should get the path of the file wich is saved
-                     * So we can send the path as string to writeSaveAction()
-                     */
-
-                    // Code to write the stream goes here.
-                    mystream.Close();
-                    MessageBox.Show(mystream.ToString());
-                    //log.writeSaveAction();
-                }
+                pictureBox1.Image.Save(saveDialog.FileName);
             }
-           
+
+            log.writeSaveAction(saveDialog.FileName);
         }
 
         private void btn_print_Click(object sender, EventArgs e)
@@ -63,7 +49,6 @@ namespace Esgis_Paint
 
         private void modifyPic_Load(object sender, EventArgs e)
         {
-
         }
 
         public void getImage(FileInfo imgInfo)
@@ -76,18 +61,13 @@ namespace Esgis_Paint
             this.Text = "Modifier une image - " + img.FullName;
 
             refreshPictureBoxImage();
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; //Setting Size mode
-
         }
 
        
-        //TODO: Code this method
         private void btn_rotateLeft_Click(object sender, EventArgs e)
         {
-
-            //pictureObj.RotateFlip(RotateFlipType.);
-            //pictureObj.RotateFlip
             refreshPictureBoxImage();
+            pictureObj.RotateFlip(RotateFlipType.Rotate270FlipNone);
         }
 
         /// <summary>
@@ -102,6 +82,11 @@ namespace Esgis_Paint
         {
             pictureObj.RotateFlip(RotateFlipType.Rotate90FlipNone);
             refreshPictureBoxImage();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -54,8 +54,7 @@ namespace Esgis_Paint
                 //Calling modifyPic and sending to it the picture info
                 modifyPic modifPage = new modifyPic();
                 modifPage.getImage(choice_info);
-                modifPage.Show();
-                
+                modifPage.Show();                
             }
             
         }
@@ -68,6 +67,11 @@ namespace Esgis_Paint
         private void btn_log_Click(object sender, EventArgs e)
         {
             log.openLogFile();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

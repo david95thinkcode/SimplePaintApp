@@ -37,7 +37,7 @@
             // btn_new
             // 
             this.btn_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_new.Location = new System.Drawing.Point(142, 73);
+            this.btn_new.Location = new System.Drawing.Point(31, 35);
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(98, 37);
             this.btn_new.TabIndex = 0;
@@ -48,7 +48,7 @@
             // btn_open
             // 
             this.btn_open.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_open.Location = new System.Drawing.Point(246, 73);
+            this.btn_open.Location = new System.Drawing.Point(31, 88);
             this.btn_open.Name = "btn_open";
             this.btn_open.Size = new System.Drawing.Size(98, 37);
             this.btn_open.TabIndex = 1;
@@ -59,7 +59,7 @@
             // btn_log
             // 
             this.btn_log.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_log.Location = new System.Drawing.Point(350, 73);
+            this.btn_log.Location = new System.Drawing.Point(31, 143);
             this.btn_log.Name = "btn_log";
             this.btn_log.Size = new System.Drawing.Size(98, 37);
             this.btn_log.TabIndex = 3;
@@ -70,7 +70,7 @@
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(246, 138);
+            this.btn_close.Location = new System.Drawing.Point(31, 197);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(98, 37);
             this.btn_close.TabIndex = 4;
@@ -82,7 +82,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 267);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(162, 267);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_log);
             this.Controls.Add(this.btn_open);
@@ -90,6 +91,7 @@
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.Home_Load);
             this.Shown += new System.EventHandler(this.Home_Shown);
             this.ResumeLayout(false);
 

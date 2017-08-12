@@ -67,6 +67,7 @@ namespace Esgis_Paint.Models
             data = "Esgis_Paint closed.";
 
             writeIntoLogFile(data);
+            Console.WriteLine(" ");
         }
 
         /// <summary>

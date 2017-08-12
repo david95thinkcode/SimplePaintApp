@@ -34,6 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btn_eraser
@@ -47,6 +48,7 @@
             this.btn_eraser.Text = "Gomme";
             this.btn_eraser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_eraser.UseVisualStyleBackColor = true;
+            this.btn_eraser.Click += new System.EventHandler(this.btn_eraser_Click);
             // 
             // btn_pencil
             // 
@@ -59,6 +61,7 @@
             this.btn_pencil.Text = "Crayon";
             this.btn_pencil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_pencil.UseVisualStyleBackColor = true;
+            this.btn_pencil.Click += new System.EventHandler(this.btn_pencil_Click);
             // 
             // button2
             // 
@@ -86,24 +89,38 @@
             // btn_save
             // 
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_save.Location = new System.Drawing.Point(607, 35);
+            this.btn_save.Location = new System.Drawing.Point(609, 24);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(95, 77);
             this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Enregistrer";
             this.btn_save.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(12, 118);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(711, 393);
+            this.panel1.TabIndex = 5;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // drawPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 523);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_eraser);
             this.Controls.Add(this.btn_pencil);
             this.Name = "drawPic";
             this.Text = "Dessiner";
+            this.Load += new System.EventHandler(this.drawPic_Load);
             this.ResumeLayout(false);
 
         }
@@ -115,5 +132,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Panel panel1;
     }
 }
