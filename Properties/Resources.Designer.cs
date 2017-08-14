@@ -91,6 +91,16 @@ namespace Esgis_Paint.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon Brush {
+            get {
+                object obj = ResourceManager.GetObject("Brush", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Cancel_32px_1 {
@@ -106,6 +116,16 @@ namespace Esgis_Paint.Properties {
         internal static System.Drawing.Bitmap Car_32px {
             get {
                 object obj = ResourceManager.GetObject("Car_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Circle_32px {
+            get {
+                object obj = ResourceManager.GetObject("Circle_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,46 @@ namespace Esgis_Paint.Properties {
         internal static System.Drawing.Bitmap Facebook_Like_32px {
             get {
                 object obj = ResourceManager.GetObject("Facebook_Like_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flip_Horizontal_64px {
+            get {
+                object obj = ResourceManager.GetObject("Flip_Horizontal_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flip_Vertical_64px {
+            get {
+                object obj = ResourceManager.GetObject("Flip_Vertical_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Full_Image_26px {
+            get {
+                object obj = ResourceManager.GetObject("Full_Image_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Full_Moon_26px {
+            get {
+                object obj = ResourceManager.GetObject("Full_Moon_26px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -286,6 +346,16 @@ namespace Esgis_Paint.Properties {
         internal static System.Drawing.Bitmap Print_52px {
             get {
                 object obj = ResourceManager.GetObject("Print_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_Stroked_32px {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle_Stroked_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
