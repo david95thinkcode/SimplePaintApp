@@ -35,11 +35,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nouveauDessinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.annulerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dessinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nouveauToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effacerToutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numericUpDown_Epaisseur = new System.Windows.Forms.NumericUpDown();
             this.groupBox_Epaisseur = new System.Windows.Forms.GroupBox();
@@ -52,12 +51,21 @@
             this.pictureBox_Color1 = new System.Windows.Forms.PictureBox();
             this.pictureBox_Color4 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Outils = new System.Windows.Forms.GroupBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.btn_ZoomOut = new System.Windows.Forms.Button();
             this.btn_ZoomIn = new System.Windows.Forms.Button();
             this.btn_pencil = new System.Windows.Forms.Button();
             this.btn_eraser = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox_Formes = new System.Windows.Forms.GroupBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -65,10 +73,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox_Fichier = new System.Windows.Forms.GroupBox();
-            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
@@ -80,8 +88,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color4)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBox_Outils.SuspendLayout();
+            this.groupBox_Formes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -105,11 +121,12 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(128, 42);
+            this.panel1.Location = new System.Drawing.Point(131, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(734, 454);
+            this.panel1.Size = new System.Drawing.Size(692, 583);
             this.panel1.TabIndex = 5;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -124,7 +141,7 @@
             this.dessinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1022, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1002, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -132,8 +149,9 @@
             // 
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nouveauDessinToolStripMenuItem,
+            this.ouvrirToolStripMenuItem,
             this.enregistrerToolStripMenuItem,
-            this.annulerToolStripMenuItem,
+            this.imprimerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
             this.fichierToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
@@ -147,20 +165,19 @@
             this.nouveauDessinToolStripMenuItem.Text = "Nouveau dessin";
             this.nouveauDessinToolStripMenuItem.Click += new System.EventHandler(this.nouveauDessinToolStripMenuItem_Click);
             // 
+            // ouvrirToolStripMenuItem
+            // 
+            this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.ouvrirToolStripMenuItem.Text = "Ouvrir image";
+            this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
+            // 
             // enregistrerToolStripMenuItem
             // 
-            this.enregistrerToolStripMenuItem.Enabled = false;
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
             this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.enregistrerToolStripMenuItem.Text = "Enregistrer ";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
-            // 
-            // annulerToolStripMenuItem
-            // 
-            this.annulerToolStripMenuItem.Name = "annulerToolStripMenuItem";
-            this.annulerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.annulerToolStripMenuItem.Text = "Annuler";
-            this.annulerToolStripMenuItem.Click += new System.EventHandler(this.annulerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
@@ -172,19 +189,11 @@
             // dessinToolStripMenuItem
             // 
             this.dessinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nouveauToolStripMenuItem,
             this.effacerToutToolStripMenuItem});
             this.dessinToolStripMenuItem.Name = "dessinToolStripMenuItem";
             this.dessinToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.dessinToolStripMenuItem.Text = "Dessin";
             this.dessinToolStripMenuItem.Click += new System.EventHandler(this.dessinToolStripMenuItem_Click);
-            // 
-            // nouveauToolStripMenuItem
-            // 
-            this.nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
-            this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.nouveauToolStripMenuItem.Text = "Nouveau";
-            this.nouveauToolStripMenuItem.Click += new System.EventHandler(this.nouveauToolStripMenuItem_Click);
             // 
             // effacerToutToolStripMenuItem
             // 
@@ -205,10 +214,10 @@
             // 
             // groupBox_Epaisseur
             // 
-            this.groupBox_Epaisseur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Epaisseur.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox_Epaisseur.Controls.Add(this.numericUpDown_Epaisseur);
             this.groupBox_Epaisseur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Epaisseur.Location = new System.Drawing.Point(886, 44);
+            this.groupBox_Epaisseur.Location = new System.Drawing.Point(846, 37);
             this.groupBox_Epaisseur.Name = "groupBox_Epaisseur";
             this.groupBox_Epaisseur.Size = new System.Drawing.Size(103, 70);
             this.groupBox_Epaisseur.TabIndex = 15;
@@ -217,7 +226,7 @@
             // 
             // groupBox_Couleur
             // 
-            this.groupBox_Couleur.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox_Couleur.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox_Couleur.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBox_Couleur.Controls.Add(this.pictureBox_ColorActual);
             this.groupBox_Couleur.Controls.Add(this.pictureBox_Color2);
@@ -228,7 +237,7 @@
             this.groupBox_Couleur.Controls.Add(this.pictureBox_Color4);
             this.groupBox_Couleur.Controls.Add(this.button3);
             this.groupBox_Couleur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Couleur.Location = new System.Drawing.Point(886, 127);
+            this.groupBox_Couleur.Location = new System.Drawing.Point(846, 116);
             this.groupBox_Couleur.Name = "groupBox_Couleur";
             this.groupBox_Couleur.Size = new System.Drawing.Size(103, 170);
             this.groupBox_Couleur.TabIndex = 16;
@@ -324,24 +333,40 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // groupBox3
+            // groupBox_Outils
             // 
-            this.groupBox3.Controls.Add(this.btn_ZoomOut);
-            this.groupBox3.Controls.Add(this.btn_ZoomIn);
-            this.groupBox3.Controls.Add(this.btn_pencil);
-            this.groupBox3.Controls.Add(this.btn_eraser);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 66);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(81, 237);
-            this.groupBox3.TabIndex = 17;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Outils";
+            this.groupBox_Outils.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Outils.Controls.Add(this.btn_clear);
+            this.groupBox_Outils.Controls.Add(this.btn_ZoomOut);
+            this.groupBox_Outils.Controls.Add(this.btn_ZoomIn);
+            this.groupBox_Outils.Controls.Add(this.btn_pencil);
+            this.groupBox_Outils.Controls.Add(this.btn_eraser);
+            this.groupBox_Outils.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Outils.Location = new System.Drawing.Point(28, 34);
+            this.groupBox_Outils.Name = "groupBox_Outils";
+            this.groupBox_Outils.Size = new System.Drawing.Size(81, 269);
+            this.groupBox_Outils.TabIndex = 17;
+            this.groupBox_Outils.TabStop = false;
+            this.groupBox_Outils.Text = "Outils";
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_clear.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_clear.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btn_clear.Location = new System.Drawing.Point(10, 224);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(59, 37);
+            this.btn_clear.TabIndex = 19;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_ZoomOut
             // 
             this.btn_ZoomOut.Image = global::Esgis_Paint.Properties.Resources.Zoom_Out_32px;
-            this.btn_ZoomOut.Location = new System.Drawing.Point(16, 171);
+            this.btn_ZoomOut.Location = new System.Drawing.Point(16, 172);
             this.btn_ZoomOut.Name = "btn_ZoomOut";
             this.btn_ZoomOut.Size = new System.Drawing.Size(45, 37);
             this.btn_ZoomOut.TabIndex = 18;
@@ -350,7 +375,7 @@
             // btn_ZoomIn
             // 
             this.btn_ZoomIn.Image = global::Esgis_Paint.Properties.Resources.Zoom_In_32px;
-            this.btn_ZoomIn.Location = new System.Drawing.Point(16, 129);
+            this.btn_ZoomIn.Location = new System.Drawing.Point(16, 130);
             this.btn_ZoomIn.Name = "btn_ZoomIn";
             this.btn_ZoomIn.Size = new System.Drawing.Size(45, 37);
             this.btn_ZoomIn.TabIndex = 17;
@@ -378,21 +403,118 @@
             this.btn_eraser.UseVisualStyleBackColor = true;
             this.btn_eraser.Click += new System.EventHandler(this.btn_eraser_Click);
             // 
-            // groupBox4
+            // groupBox_Formes
             // 
-            this.groupBox4.Controls.Add(this.pictureBox6);
-            this.groupBox4.Controls.Add(this.pictureBox5);
-            this.groupBox4.Controls.Add(this.pictureBox4);
-            this.groupBox4.Controls.Add(this.pictureBox3);
-            this.groupBox4.Controls.Add(this.pictureBox2);
-            this.groupBox4.Controls.Add(this.pictureBox1);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(12, 333);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(97, 159);
-            this.groupBox4.TabIndex = 17;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Formes ";
+            this.groupBox_Formes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Formes.Controls.Add(this.pictureBox13);
+            this.groupBox_Formes.Controls.Add(this.pictureBox14);
+            this.groupBox_Formes.Controls.Add(this.pictureBox7);
+            this.groupBox_Formes.Controls.Add(this.pictureBox8);
+            this.groupBox_Formes.Controls.Add(this.pictureBox9);
+            this.groupBox_Formes.Controls.Add(this.pictureBox10);
+            this.groupBox_Formes.Controls.Add(this.pictureBox11);
+            this.groupBox_Formes.Controls.Add(this.pictureBox12);
+            this.groupBox_Formes.Controls.Add(this.pictureBox6);
+            this.groupBox_Formes.Controls.Add(this.pictureBox5);
+            this.groupBox_Formes.Controls.Add(this.pictureBox4);
+            this.groupBox_Formes.Controls.Add(this.pictureBox3);
+            this.groupBox_Formes.Controls.Add(this.pictureBox2);
+            this.groupBox_Formes.Controls.Add(this.pictureBox1);
+            this.groupBox_Formes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Formes.Location = new System.Drawing.Point(28, 309);
+            this.groupBox_Formes.Name = "groupBox_Formes";
+            this.groupBox_Formes.Size = new System.Drawing.Size(97, 317);
+            this.groupBox_Formes.TabIndex = 17;
+            this.groupBox_Formes.TabStop = false;
+            this.groupBox_Formes.Text = "Formes ";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox13.Image = global::Esgis_Paint.Properties.Resources.Rectangle_Stroked_32px;
+            this.pictureBox13.Location = new System.Drawing.Point(50, 273);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox13.TabIndex = 13;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox14.Image = global::Esgis_Paint.Properties.Resources.Circle_32px;
+            this.pictureBox14.Location = new System.Drawing.Point(9, 274);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox14.TabIndex = 12;
+            this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Image = global::Esgis_Paint.Properties.Resources.Musical_Notes_32px;
+            this.pictureBox7.Location = new System.Drawing.Point(50, 149);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox7.TabIndex = 11;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Image = global::Esgis_Paint.Properties.Resources.Instagram_32px;
+            this.pictureBox8.Location = new System.Drawing.Point(9, 232);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox8.TabIndex = 10;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Image = global::Esgis_Paint.Properties.Resources.Apple_32px;
+            this.pictureBox9.Location = new System.Drawing.Point(50, 232);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox9.TabIndex = 9;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Image = global::Esgis_Paint.Properties.Resources.Car_32px;
+            this.pictureBox10.Location = new System.Drawing.Point(50, 190);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox10.TabIndex = 8;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox11.Image = global::Esgis_Paint.Properties.Resources.Africa_32px;
+            this.pictureBox11.Location = new System.Drawing.Point(9, 191);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox11.TabIndex = 7;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Image = global::Esgis_Paint.Properties.Resources.Shopping_Cart_32px;
+            this.pictureBox12.Location = new System.Drawing.Point(9, 150);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox12.TabIndex = 6;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
             // pictureBox6
             // 
@@ -462,31 +584,16 @@
             // 
             // groupBox_Fichier
             // 
-            this.groupBox_Fichier.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox_Fichier.Controls.Add(this.btn_exit);
+            this.groupBox_Fichier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox_Fichier.Controls.Add(this.btn_close);
             this.groupBox_Fichier.Controls.Add(this.btn_save);
             this.groupBox_Fichier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Fichier.Location = new System.Drawing.Point(886, 303);
+            this.groupBox_Fichier.Location = new System.Drawing.Point(846, 295);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
-            this.groupBox_Fichier.Size = new System.Drawing.Size(103, 176);
+            this.groupBox_Fichier.Size = new System.Drawing.Size(103, 128);
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
             this.groupBox_Fichier.Text = "Fichier";
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.Image = global::Esgis_Paint.Properties.Resources.Shutdown_32px;
-            this.btn_exit.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_exit.Location = new System.Drawing.Point(7, 124);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(88, 41);
-            this.btn_exit.TabIndex = 6;
-            this.btn_exit.Text = "Exit";
-            this.btn_exit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_close
             // 
@@ -500,6 +607,7 @@
             this.btn_close.Text = "Close";
             this.btn_close.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // btn_save
             // 
@@ -528,25 +636,33 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // imprimerToolStripMenuItem
+            // 
+            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.imprimerToolStripMenuItem.Text = "Imprimer";
+            this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
+            // 
             // drawPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1022, 638);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(1002, 638);
+            this.Controls.Add(this.groupBox_Formes);
             this.Controls.Add(this.groupBox_Couleur);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox_Epaisseur);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox_Outils);
             this.Controls.Add(this.groupBox_Fichier);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "drawPic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dessiner";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.drawPic_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -560,8 +676,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color4)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.groupBox_Outils.ResumeLayout(false);
+            this.groupBox_Formes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -587,10 +711,8 @@
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nouveauDessinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem annulerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dessinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nouveauToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem effacerToutToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numericUpDown_Epaisseur;
         private System.Windows.Forms.GroupBox groupBox_Epaisseur;
@@ -598,11 +720,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_ZoomIn;
         private System.Windows.Forms.Button btn_ZoomOut;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox_Outils;
+        private System.Windows.Forms.GroupBox groupBox_Formes;
         private System.Windows.Forms.GroupBox groupBox_Fichier;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.PictureBox pictureBox_ColorActual;
         private System.Windows.Forms.PictureBox pictureBox_Color2;
         private System.Windows.Forms.PictureBox pictureBox_Color5;
@@ -616,5 +737,16 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
     }
 }

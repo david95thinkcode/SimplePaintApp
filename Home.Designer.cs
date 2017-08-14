@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_open = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,9 +41,8 @@
             this.journalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fermerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox_Exit = new System.Windows.Forms.PictureBox();
+            this.btn_close = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_new
@@ -150,21 +150,25 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.toolStripMenuItem1.Text = "Aide";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.toolStripMenuItem1.Text = "A propos";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // pictureBox_Exit
+            // btn_close
             // 
-            this.pictureBox_Exit.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox_Exit.Image = global::Esgis_Paint.Properties.Resources.Shutdown_32px_2;
-            this.pictureBox_Exit.Location = new System.Drawing.Point(479, 0);
-            this.pictureBox_Exit.Name = "pictureBox_Exit";
-            this.pictureBox_Exit.Size = new System.Drawing.Size(35, 33);
-            this.pictureBox_Exit.TabIndex = 9;
-            this.pictureBox_Exit.TabStop = false;
-            this.pictureBox_Exit.Click += new System.EventHandler(this.pictureBox_Exit_Click);
+            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Shutdown_32px_2;
+            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_close.Location = new System.Drawing.Point(415, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(111, 40);
+            this.btn_close.TabIndex = 10;
+            this.btn_close.Text = "Fermer";
+            this.btn_close.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click_1);
             // 
             // Home
             // 
@@ -172,7 +176,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(526, 333);
-            this.Controls.Add(this.pictureBox_Exit);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -180,6 +184,7 @@
             this.Controls.Add(this.btn_new);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -188,7 +193,6 @@
             this.Shown += new System.EventHandler(this.Home_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +212,6 @@
         private System.Windows.Forms.ToolStripMenuItem journalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fermerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.PictureBox pictureBox_Exit;
+        private System.Windows.Forms.Button btn_close;
     }
 }

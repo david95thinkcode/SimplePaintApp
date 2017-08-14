@@ -28,13 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modifyPic));
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btn_flipVertical = new System.Windows.Forms.Button();
+            this.btn_flipHorizontal = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_rotateLeft = new System.Windows.Forms.Button();
             this.btn_rotateRight = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btn_flipVertical
+            // 
+            this.btn_flipVertical.Image = global::Esgis_Paint.Properties.Resources.Flip_Vertical_64px;
+            this.btn_flipVertical.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_flipVertical.Location = new System.Drawing.Point(240, 12);
+            this.btn_flipVertical.Name = "btn_flipVertical";
+            this.btn_flipVertical.Size = new System.Drawing.Size(104, 77);
+            this.btn_flipVertical.TabIndex = 7;
+            this.btn_flipVertical.Text = "Ret. Vertical";
+            this.btn_flipVertical.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_flipVertical.UseVisualStyleBackColor = true;
+            this.btn_flipVertical.Click += new System.EventHandler(this.btn_flipVertical_Click);
+            // 
+            // btn_flipHorizontal
+            // 
+            this.btn_flipHorizontal.Image = global::Esgis_Paint.Properties.Resources.Flip_Horizontal_64px;
+            this.btn_flipHorizontal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_flipHorizontal.Location = new System.Drawing.Point(354, 12);
+            this.btn_flipHorizontal.Name = "btn_flipHorizontal";
+            this.btn_flipHorizontal.Size = new System.Drawing.Size(104, 77);
+            this.btn_flipHorizontal.TabIndex = 6;
+            this.btn_flipHorizontal.Text = "Ret. Horizontal";
+            this.btn_flipHorizontal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_flipHorizontal.UseVisualStyleBackColor = true;
+            this.btn_flipHorizontal.Click += new System.EventHandler(this.btn_flipHorizontal_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 107);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(726, 460);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_print
             // 
@@ -79,7 +123,7 @@
             // 
             this.btn_rotateRight.Image = global::Esgis_Paint.Properties.Resources.Rotate_Right_52px_1;
             this.btn_rotateRight.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_rotateRight.Location = new System.Drawing.Point(122, 12);
+            this.btn_rotateRight.Location = new System.Drawing.Point(126, 12);
             this.btn_rotateRight.Name = "btn_rotateRight";
             this.btn_rotateRight.Size = new System.Drawing.Size(104, 77);
             this.btn_rotateRight.TabIndex = 1;
@@ -88,29 +132,29 @@
             this.btn_rotateRight.UseVisualStyleBackColor = true;
             this.btn_rotateRight.Click += new System.EventHandler(this.btn_rotateRight_Click);
             // 
-            // pictureBox1
+            // printPreviewDialog1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 126);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(726, 386);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // modifyPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 515);
+            this.ClientSize = new System.Drawing.Size(750, 579);
+            this.Controls.Add(this.btn_flipVertical);
+            this.Controls.Add(this.btn_flipHorizontal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_print);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_rotateLeft);
             this.Controls.Add(this.btn_rotateRight);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "modifyPic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifier une image";
@@ -128,5 +172,9 @@
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_flipHorizontal;
+        private System.Windows.Forms.Button btn_flipVertical;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
