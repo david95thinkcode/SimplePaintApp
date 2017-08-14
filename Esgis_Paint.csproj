@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="drawPic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,7 @@
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Journal.cs" />
+    <Compile Include="Models\SpecialForm.cs" />
     <Compile Include="modifyPic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="drawPic.resx">
       <DependentUpon>drawPic.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,17 +109,57 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="res\Cancel_32px_1.png" />
+    <None Include="Resources\Africa_32px.png" />
+    <None Include="Resources\Apple_32px.png" />
+    <None Include="Resources\Bright Moon_32px.png" />
+    <None Include="Resources\Car_32px.png" />
+    <None Include="Resources\Cloud_32px.png" />
+    <None Include="Resources\Contacts_32px.png" />
+    <None Include="Resources\Facebook Like_32px.png" />
+    <None Include="Resources\Handshake_32px.png" />
+    <None Include="Resources\Happy_32px.png" />
+    <None Include="Resources\Hearts_32px.png" />
+    <None Include="Resources\In Love_32px.png" />
+    <None Include="Resources\Instagram_32px.png" />
+    <None Include="Resources\Lock_32px.png" />
+    <None Include="Resources\LOL_32px.png" />
+    <None Include="Resources\Musical Notes_32px.png" />
+    <None Include="Resources\Shopping Cart_32px.png" />
+    <None Include="Resources\Star_32px.png" />
+    <None Include="Resources\Sun_32px.png" />
+    <None Include="Resources\Triangle_32px.png" />
+    <None Include="Resources\Walking_32px.png" />
+    <None Include="Resources\Flip Horizontal_64px.png" />
+    <None Include="Resources\Flip Vertical_64px.png" />
+    <None Include="Resources\Brush.ico" />
+    <None Include="Resources\Full Moon_26px.png" />
+    <None Include="Resources\Full Image_26px.png" />
+    <None Include="Resources\Rectangle Stroked_32px.png" />
+    <None Include="Resources\Circle_32px.png" />
     <Content Include="res\Christmas Star_64px.png" />
+    <None Include="res\Zoom In_32px.png" />
+    <None Include="res\Zoom Out_32px.png" />
+    <None Include="res\Edit_32px_4.png" />
     <Content Include="res\Edit_80px_2.png" />
     <Content Include="res\Eraser_80px.png" />
+    <None Include="res\Erase_32px.png" />
     <Content Include="res\Hearts_Filled_52px.png" />
     <Content Include="res\Hearts_64px.png" />
+    <Content Include="res\Menu_64px.png" />
+    <None Include="res\More_32px.png" />
     <Content Include="res\Print_52px.png" />
     <Content Include="res\Rectangle_50px.png" />
     <Content Include="res\Rectangle_filled_52px.png" />
     <Content Include="res\Rotate Left_52px.png" />
     <Content Include="res\Rotate Right_52px_1.png" />
+    <None Include="res\Save as_32px.png" />
+    <None Include="res\Save_32px.png" />
     <Content Include="res\Save_52px.png" />
+    <None Include="res\Sort Down_32px.png" />
+    <None Include="res\Sort Up_32px.png" />
+    <None Include="res\Shutdown_32px.png" />
+    <None Include="res\Shutdown_32px_2.png" />
     <Content Include="res\Star_50px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

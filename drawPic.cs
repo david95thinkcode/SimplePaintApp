@@ -294,7 +294,7 @@ namespace Esgis_Paint
                 old = e.Location;
             }
 
-            //En parlant de la gomme
+            //About eraser
             if (eraser_state)
             {
                 old = e.Location;
@@ -306,10 +306,7 @@ namespace Esgis_Paint
                 Specialform = new SpecialForm(Specialform_IMG, e.Location);
                 allSpecialForms.Add(Specialform);
             }
-
-            //Add the point to the list
-            allPoints.Add(current);
-
+            
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
@@ -324,8 +321,7 @@ namespace Esgis_Paint
                     old = current;
 
                     //Add the draw point to the list of Points
-                    allPoints.Add(current);
-                    
+                    allPoints.Add(current);                    
                 }
             }
             
@@ -467,7 +463,7 @@ namespace Esgis_Paint
                 {
                     bitm.Save(saveDialog.FileName);
                     log.writeSaveAction(saveDialog.FileName);
-                    MessageBox.Show("Image enregistrée !");
+                    //MessageBox.Show("Image enregistrée !");
                 }
 
             }
