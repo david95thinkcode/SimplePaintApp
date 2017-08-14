@@ -41,7 +41,8 @@ namespace Esgis_Paint
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            AboutBox1 ab = new AboutBox1();
+            ab.Show();
         }
 
         private void nouveauDessinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,12 +141,26 @@ namespace Esgis_Paint
         /// </summary>
         private void DisconnectApp()
         {
-            log.writeDisconnectionAction();
-            this.Dispose();
+            DialogResult exitresult = MessageBox.Show("Etes-vous sur de vouloir fermer ESGIS PAINT ?", "Quitter ? ", MessageBoxButtons.YesNo);
+
+            if (exitresult == DialogResult.Yes)
+            {
+                log.writeDisconnectionAction();
+                Dispose();
+            }
         }
+
 
         #endregion
 
-        
+        private void pictureBox_Exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btn_close_Click_1(object sender, EventArgs e)
+        {
+            DisconnectApp();
+        }
     }
 }

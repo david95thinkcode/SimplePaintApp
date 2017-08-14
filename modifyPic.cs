@@ -14,10 +14,13 @@ namespace Esgis_Paint
 {
     public partial class modifyPic : Form
     {
+
+        #region Variables
         Image pictureObj;
         FileStream picture_stream;
         FileInfo img;
-        Journal log;
+        Journal log; 
+        #endregion
 
         public modifyPic()
         {
@@ -25,45 +28,12 @@ namespace Esgis_Paint
             log = new Journal();
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
-        {   
-            SaveFileDialog saveDialog = new SaveFileDialog();
-
-            saveDialog.Filter = "Image (*.PNG)|*.PNG";
-            //saveDialog.FilterIndex = 2;
-            saveDialog.RestoreDirectory = true;
-
-            //Showing and saving the picture
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.Image.Save(saveDialog.FileName);
-            }
-
-            log.writeSaveAction(saveDialog.FileName);
-        }
-
-        private void btn_print_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void modifyPic_Load(object sender, EventArgs e)
         {
         }
 
-        public void getImage(FileInfo imgInfo)
-        {            
-            //Getting the picture stream
-            img = imgInfo;
-            picture_stream = img.OpenRead();
-            pictureObj = Image.FromStream(picture_stream); 
+        #region TRANSFORM Button
 
-            this.Text = "Modifier une image - " + img.FullName;
-
-            refreshPictureBoxImage();
-        }
-
-       
         private void btn_rotateLeft_Click(object sender, EventArgs e)
         {
             refreshPictureBoxImage();
@@ -84,9 +54,72 @@ namespace Esgis_Paint
             refreshPictureBoxImage();
         }
 
+        private void btn_flipVertical_Click(object sender, EventArgs e)
+        {
+            pictureObj.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            refreshPictureBoxImage();
+        }
+
+        private void btn_flipHorizontal_Click(object sender, EventArgs e)
+        {
+            pictureObj.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            refreshPictureBoxImage();
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
+
+        #endregion
+
+        #region OPTIONS Button
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+
+            saveDialog.Filter = "Image (*.PNG)|*.PNG";
+            //saveDialog.FilterIndex = 2;
+            saveDialog.RestoreDirectory = true;
+
+            //Showing and saving the picture
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image.Save(saveDialog.FileName);
+                this.Text = saveDialog.FileName + " - Modifier une image"; ;
+            }
+
+            log.writeSaveAction(saveDialog.FileName);
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            //printDocument1.PrinterSettings.PrintToFile);
+            ///printDocument1.Container = 
+            printPreviewDialog1.Document = printDocument1;
+            printDocument1.Print();
+            log.writePrintAction(img.FullName);
+            //printDocument1.
+        }
+        
+        #endregion
+        
+        #region METHODS
+
+        public void getImage(FileInfo imgInfo)
+        {
+            //Getting the picture stream
+            img = imgInfo;
+            picture_stream = img.OpenRead();
+            pictureObj = Image.FromStream(picture_stream);
+
+            this.Text = img.FullName + " - Modifier une image";
+
+            refreshPictureBoxImage();
+        }
+
+        #endregion
+        
     }
 }
