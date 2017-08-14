@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
 [assembly: AssemblyTitle("Esgis_Paint")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Application minimaliste de dessin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("David K. HIHEAGLO ")]
 [assembly: AssemblyProduct("Esgis_Paint")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
