@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,9 @@ namespace Esgis_Paint
         Color pen_color;
         decimal pen_width;
         decimal eraser_width;
-        Image Specialform;
+        SpecialForm Specialform;
+        List<SpecialForm> allSpecialForms = new List<SpecialForm>();
+        Image Specialform_IMG;
 
         //Useful to control pen state
         public Boolean pen_state;
@@ -52,8 +55,10 @@ namespace Esgis_Paint
             pen_color = Color.Black;
             pen = new Pen(Color.Black, (int) pen_width);
             eraser = new Pen(Color.White, (int) eraser_width);
+            pen.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
+            eraser.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
             numericUpDown_Epaisseur.Value = pen_width;
-            numericUpDown_Epaisseur.Increment = 1;
+            numericUpDown_Epaisseur.Increment = 3;
 
 
             #region COLORS OF COLOR GROUPBOX
@@ -69,7 +74,21 @@ namespace Esgis_Paint
 
         private void drawPic_Load(object sender, EventArgs e)
         {
-            
+            //panel1.Height = (int) (0.75 * Screen.PrimaryScreen.Bounds.Height);
+            //panel1.Width = (int) (0.5 * Screen.PrimaryScreen.Bounds.Width);
+            //panel1.Size = new Size(panel1.Width, panel1.Height);
+
+            // Changing the location of Left Control boxes
+            groupBox_Outils.Location = new Point(groupBox_Outils.Location.X + 10, groupBox_Outils.Location.Y);
+            groupBox_Formes.Location = new Point(groupBox_Formes.Location.X + 2, groupBox_Formes.Location.Y);
+
+            // Changing the location of Right Control boxes
+            int rightControlBoxes_X = groupBox_Outils.Width + panel1.Width + 70;            
+            //groupBox_Epaisseur.Location = new Point(rightControlBoxes_X, groupBox_Epaisseur.Location.Y);
+            //groupBox_Couleur.Location = new Point(rightControlBoxes_X, groupBox_Couleur.Location.Y);
+            //groupBox_Fichier.Location = new Point(rightControlBoxes_X, groupBox_Fichier.Location.Y);
+
+            this.Width = this.Width - 50;
         }
 
         #region GROUPBOX : Outils
@@ -88,6 +107,13 @@ namespace Esgis_Paint
             pen_state = false;
             specialForm_enabled = false;
             numericUpDown_Epaisseur.Value = (decimal)eraser.Width;
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            allPoints = new List<Point>();
+            allSpecialForms = new List<SpecialForm>();
+            panel1.Invalidate();
         }
 
         #endregion
@@ -125,6 +151,45 @@ namespace Esgis_Paint
             RefreshSpecialForm_With(pictureBox4.Image);
         }
 
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox12.Image);
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox7.Image);
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox11.Image);
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox10.Image);
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox8.Image);
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox9.Image);
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox14.Image);
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            RefreshSpecialForm_With(pictureBox13.Image);
+        }
         #endregion
 
         #region GROUPBOX : Epaisseur
@@ -195,29 +260,18 @@ namespace Esgis_Paint
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            Bitmap bitm = new Bitmap(panel1.Width, panel1.Height);
-            Graphics bitGraphics = Graphics.FromImage(bitm);
-
-            saveDialog.Filter = "Image (*.PNG)|*.PNG";
-
-            //Draw all point to Graphics
-            bitGraphics.DrawLines(pen, allPoints.ToArray());
-
-            //We name the image with words typed by the user
-            if (saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                bitm.Save(saveDialog.FileName);
-                log.writeSaveAction(saveDialog.FileName);
-                MessageBox.Show("Image enregistrée !");
-            }
+            SaveSketch();
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            Dispose();
+            
         }
 
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            DisconnectApp();
+        }
 
         #endregion
 
@@ -246,6 +300,13 @@ namespace Esgis_Paint
                 old = e.Location;
             }
 
+            if (specialForm_enabled)
+            {
+                g.DrawImage(Specialform_IMG, e.Location);
+                Specialform = new SpecialForm(Specialform_IMG, e.Location);
+                allSpecialForms.Add(Specialform);
+            }
+
             //Add the point to the list
             allPoints.Add(current);
 
@@ -264,6 +325,7 @@ namespace Esgis_Paint
 
                     //Add the draw point to the list of Points
                     allPoints.Add(current);
+                    
                 }
             }
             
@@ -285,21 +347,19 @@ namespace Esgis_Paint
             {
                 if (e.Button == MouseButtons.Left)
                 {
-                    g.DrawImage(Specialform, Cursor.Position);
+                    g.DrawImage(Specialform_IMG, e.Location);
+                    
+                    //Add the draw point to the list of SpecialForm
+                    Specialform = new SpecialForm(Specialform_IMG, e.Location);
+                    allSpecialForms.Add(Specialform);
                 }
             }
         }
 
         private void panel1_Click(object sender, EventArgs e)
         {
-            //If one Special Form is selected,
-            //so we draw it
-            if (specialForm_enabled) 
-            {
-                g.DrawImage(Specialform, Cursor.Position);
-            }
-
         }
+
         #endregion
 
         #region MENU
@@ -311,7 +371,7 @@ namespace Esgis_Paint
 
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            SaveSketch();
         }
 
         private void annulerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -321,7 +381,7 @@ namespace Esgis_Paint
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DisconnectApp();
         }
 
         private void dessinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -336,7 +396,9 @@ namespace Esgis_Paint
 
         private void effacerToutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            allPoints = new List<Point>();
+            allSpecialForms = new List<SpecialForm>();
+            panel1.Invalidate();
         }
 
         private void nouveauDessinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -374,13 +436,114 @@ namespace Esgis_Paint
         private void RefreshSpecialForm_With(Image img)
         {
             specialForm_enabled = true;
-            Specialform = img;
-        } 
+            Specialform_IMG = img;
+
+            //Make sure to not draw or erase when adding form to the panel
+            pen_state = false;
+            eraser_state = false;
+        }
+
+        private void SaveSketch()
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            Bitmap bitm = new Bitmap(panel1.Width, panel1.Height);
+            Graphics bitGraphics = Graphics.FromImage(bitm);
+
+            saveDialog.Filter = "Image (*.PNG)|*.PNG";
+
+            try
+            {
+                //Draw all point to Graphics
+                bitGraphics.DrawLines(pen, allPoints.ToArray());
+
+                //Drawing Images to Graphics
+                foreach (var item in allSpecialForms)
+                {
+                    bitGraphics.DrawImage(item._Image, item._Point);
+                }
+
+                //We name the image with words typed by the user
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    bitm.Save(saveDialog.FileName);
+                    log.writeSaveAction(saveDialog.FileName);
+                    MessageBox.Show("Image enregistrée !");
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Impossible d'enregistrer un dessin vide");
+            }
+            
+        }
+
+        /// <summary>
+        /// Open the windows used to draw
+        /// </summary>
+        private void OpenDrawWindows()
+        {
+            drawPic draw_Windows = new drawPic();
+            draw_Windows.Show();
+        }
+
+        /// <summary>
+        /// Make the user choose a picture and open ModifPic Windows
+        /// </summary>
+        private void OpenPicture()
+        {
+            OpenFileDialog OpenFile_dialog = new OpenFileDialog();
+            OpenFile_dialog.Title = "Choose a picture";
+            OpenFile_dialog.Multiselect = false;
+
+            // Set filter options and filter index.
+            OpenFile_dialog.Filter = "Images (*.BMP;*.JPG;*.PNG)|*.BMP;*.JPG;*.PNG";
+
+            //Open the file dialog
+            if (OpenFile_dialog.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo choice_info = new FileInfo(OpenFile_dialog.FileName);
+
+                //Calling modifyPic and sending to it the picture info
+                modifyPic modifPage = new modifyPic();
+                modifPage.getImage(choice_info);
+                modifPage.Show();
+            }
+        }
+
+        /// <summary>
+        /// Open the log file
+        /// </summary>
+        private void OpenJournal()
+        {
+            log.openLogFile();
+        }
+
+        /// <summary>
+        /// Close correctly the app
+        /// </summary>
+        private void DisconnectApp()
+        {
+            DialogResult exitresult = MessageBox.Show("Etes-vous sur de vouloir arrêter le dessin ?", "Quitter ? ", MessageBoxButtons.YesNo);
+            
+            if (exitresult == DialogResult.Yes)
+            {
+                log.writeDisconnectionAction();
+                Dispose();
+            }
+
+        }
+
         #endregion
-        
 
-        hiiohjjb uikubib i
-            iguuogub
+        private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenPicture();
+        }
 
+        private void imprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not implements yet !", "Sorry !");
+        }
     }
 }
