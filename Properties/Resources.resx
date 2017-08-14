@@ -139,4 +139,94 @@
   <data name="Rotate_Right_52px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\Rotate Right_52px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Africa_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Africa_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Apple_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Apple_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bright_Moon_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bright Moon_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel_32px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Cancel_32px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cloud_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cloud_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Contacts_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Contacts_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Edit_32px_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Edit_32px_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Erase_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Erase_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Facebook_Like_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Facebook Like_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Handshake_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Handshake_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Happy_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Happy_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hearts_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hearts_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Instagram_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Instagram_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="In_Love_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\In Love_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lock_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LOL_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOL_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="More_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\More_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Musical_Notes_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Musical Notes_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Save_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Save_as_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Save as_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shopping_Cart_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shopping Cart_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shutdown_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Shutdown_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shutdown_32px_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Shutdown_32px_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Star_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sun_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sun_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Triangle_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Triangle_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Walking_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Walking_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom_In_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Zoom In_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom_Out_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Zoom Out_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
