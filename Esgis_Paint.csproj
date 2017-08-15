@@ -109,6 +109,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="screenshots\screenshot_1.jpg" />
+    <None Include="README.md" />
     <None Include="res\Cancel_32px_1.png" />
     <None Include="Resources\Africa_32px.png" />
     <None Include="Resources\Apple_32px.png" />
@@ -163,5 +165,6 @@
     <None Include="res\Shutdown_32px_2.png" />
     <Content Include="res\Star_50px.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
