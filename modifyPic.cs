@@ -95,12 +95,15 @@ namespace Esgis_Paint
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            //printDocument1.PrinterSettings.PrintToFile);
-            ///printDocument1.Container = 
-            printPreviewDialog1.Document = printDocument1;
-            printDocument1.Print();
-            log.writePrintAction(img.FullName);
-            //printDocument1.
+            printPreviewDialog1 = new PrintPreviewDialog();
+
+            printDialog1.Document = printDocument1;
+
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+                log.writePrintAction(img.FullName);
+            }
         }
         
         #endregion
@@ -120,6 +123,14 @@ namespace Esgis_Paint
         }
 
         #endregion
-        
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bitm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+
+            pictureBox1.DrawToBitmap(bitm, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
+            e.Graphics.DrawImage(bitm, 0, 0);
+            bitm.Dispose();
+        }
     }
 }

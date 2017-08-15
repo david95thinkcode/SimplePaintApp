@@ -343,6 +343,16 @@ namespace Esgis_Paint.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Print_32px {
+            get {
+                object obj = ResourceManager.GetObject("Print_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Print_52px {
             get {
                 object obj = ResourceManager.GetObject("Print_52px", resourceCulture);

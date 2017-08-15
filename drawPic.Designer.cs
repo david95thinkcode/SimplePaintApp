@@ -34,9 +34,9 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nouveauDessinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dessinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effacerToutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,10 +73,15 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox_Fichier = new System.Windows.Forms.GroupBox();
+            this.btn_print = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.label_Info = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
@@ -105,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_Fichier.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -148,7 +154,6 @@
             // fichierToolStripMenuItem
             // 
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nouveauDessinToolStripMenuItem,
             this.ouvrirToolStripMenuItem,
             this.enregistrerToolStripMenuItem,
             this.imprimerToolStripMenuItem,
@@ -158,31 +163,31 @@
             this.fichierToolStripMenuItem.Text = "Fichier";
             this.fichierToolStripMenuItem.Click += new System.EventHandler(this.fichierToolStripMenuItem_Click);
             // 
-            // nouveauDessinToolStripMenuItem
-            // 
-            this.nouveauDessinToolStripMenuItem.Name = "nouveauDessinToolStripMenuItem";
-            this.nouveauDessinToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.nouveauDessinToolStripMenuItem.Text = "Nouveau dessin";
-            this.nouveauDessinToolStripMenuItem.Click += new System.EventHandler(this.nouveauDessinToolStripMenuItem_Click);
-            // 
             // ouvrirToolStripMenuItem
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ouvrirToolStripMenuItem.Text = "Ouvrir image";
             this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
             // 
             // enregistrerToolStripMenuItem
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.enregistrerToolStripMenuItem.Text = "Enregistrer ";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
+            // 
+            // imprimerToolStripMenuItem
+            // 
+            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.imprimerToolStripMenuItem.Text = "Imprimer";
+            this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -585,22 +590,37 @@
             // groupBox_Fichier
             // 
             this.groupBox_Fichier.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Fichier.Controls.Add(this.btn_print);
             this.groupBox_Fichier.Controls.Add(this.btn_close);
             this.groupBox_Fichier.Controls.Add(this.btn_save);
             this.groupBox_Fichier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_Fichier.Location = new System.Drawing.Point(846, 295);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
-            this.groupBox_Fichier.Size = new System.Drawing.Size(103, 128);
+            this.groupBox_Fichier.Size = new System.Drawing.Size(103, 173);
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
             this.groupBox_Fichier.Text = "Fichier";
+            // 
+            // btn_print
+            // 
+            this.btn_print.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.Image = global::Esgis_Paint.Properties.Resources.Print_32px;
+            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_print.Location = new System.Drawing.Point(6, 33);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(88, 41);
+            this.btn_print.TabIndex = 6;
+            this.btn_print.Text = "Print";
+            this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_print.UseVisualStyleBackColor = true;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Cancel_32px_1;
             this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_close.Location = new System.Drawing.Point(7, 77);
+            this.btn_close.Location = new System.Drawing.Point(6, 125);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(88, 41);
             this.btn_close.TabIndex = 5;
@@ -614,7 +634,7 @@
             this.btn_save.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Image = global::Esgis_Paint.Properties.Resources.Save_32px;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_save.Location = new System.Drawing.Point(7, 30);
+            this.btn_save.Location = new System.Drawing.Point(6, 78);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(88, 41);
             this.btn_save.TabIndex = 4;
@@ -636,12 +656,45 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // imprimerToolStripMenuItem
+            // printDocument1
             // 
-            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
-            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
-            this.imprimerToolStripMenuItem.Text = "Imprimer";
-            this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // label_Info
+            // 
+            this.label_Info.AutoSize = true;
+            this.label_Info.Font = new System.Drawing.Font("Ubuntu Light", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Info.Location = new System.Drawing.Point(6, 26);
+            this.label_Info.Name = "label_Info";
+            this.label_Info.Size = new System.Drawing.Size(52, 20);
+            this.label_Info.TabIndex = 19;
+            this.label_Info.Text = "label1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.Controls.Add(this.label_Info);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(846, 474);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(103, 87);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Fichier";
             // 
             // drawPic
             // 
@@ -657,6 +710,7 @@
             this.Controls.Add(this.groupBox_Epaisseur);
             this.Controls.Add(this.groupBox_Outils);
             this.Controls.Add(this.groupBox_Fichier);
+            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -693,6 +747,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox_Fichier.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -709,7 +765,6 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nouveauDessinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dessinToolStripMenuItem;
@@ -748,5 +803,11 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button btn_print;
+        private System.Windows.Forms.Label label_Info;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -36,6 +36,7 @@ namespace Esgis_Paint
         public Boolean pen_state;
         public Boolean eraser_state;
         public Boolean specialForm_enabled;
+        public Boolean drawing;
 
         #endregion
         
@@ -48,6 +49,7 @@ namespace Esgis_Paint
             pen_state = false;
             eraser_state = false;
             specialForm_enabled = false;
+            drawing = false;
 
             log = new Journal();
             eraser_width = 5;
@@ -89,6 +91,11 @@ namespace Esgis_Paint
             //groupBox_Fichier.Location = new Point(rightControlBoxes_X, groupBox_Fichier.Location.Y);
 
             this.Width = this.Width - 50;
+
+            btn_ZoomIn.Enabled = false;
+            btn_ZoomOut.Enabled = false;
+            groupBox1.Enabled = false;
+            groupBox1.Visible = false;
         }
 
         #region GROUPBOX : Outils
@@ -258,6 +265,11 @@ namespace Esgis_Paint
 
         #region GROUPBOX : Fichier
 
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            PrintSketch();
+        }
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             SaveSketch();
@@ -270,7 +282,25 @@ namespace Esgis_Paint
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            DisconnectApp();
+            //TODO: Put the code inside a method and call it here
+            if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
+            {
+                log.writeDisconnectionAction();
+                Dispose();
+            }
+            else
+            {
+                DialogResult exitresult = MessageBox.Show("Un dessin est en cours ! Voulez-vous l'enregistrer ?", "Enregistrer ? ", MessageBoxButtons.YesNo);
+
+                if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
+                {
+                    SaveSketch();
+                }
+
+                log.writeDisconnectionAction();
+                Dispose();
+            }
+            //DisconnectApp();
         }
 
         #endregion
@@ -304,7 +334,7 @@ namespace Esgis_Paint
             {
                 g.DrawImage(Specialform_IMG, e.Location);
                 Specialform = new SpecialForm(Specialform_IMG, e.Location);
-                allSpecialForms.Add(Specialform);
+                //drawing = true;
             }
             
         }
@@ -321,7 +351,8 @@ namespace Esgis_Paint
                     old = current;
 
                     //Add the draw point to the list of Points
-                    allPoints.Add(current);                    
+                    allPoints.Add(current);
+                    drawing = true;
                 }
             }
             
@@ -336,6 +367,7 @@ namespace Esgis_Paint
 
                     //Remove the eraser point from the list of points
                     allPoints.Remove(current);
+                    //drawing = true;
                 }
             }
 
@@ -348,8 +380,12 @@ namespace Esgis_Paint
                     //Add the draw point to the list of SpecialForm
                     Specialform = new SpecialForm(Specialform_IMG, e.Location);
                     allSpecialForms.Add(Specialform);
+
+                    
                 }
             }
+
+            RefreshInformations();
         }
 
         private void panel1_Click(object sender, EventArgs e)
@@ -377,7 +413,23 @@ namespace Esgis_Paint
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisconnectApp();
+            if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
+            {
+                log.writeDisconnectionAction();
+                Dispose();
+            }
+            else
+            {
+                DialogResult exitresult = MessageBox.Show("Un dessin est en cours ! Voulez-vous l'enregistrer ?", "Enregistrer ? ", MessageBoxButtons.YesNo);
+
+                if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
+                {
+                    SaveSketch();
+                }
+
+                log.writeDisconnectionAction();
+                Dispose();
+            }
         }
 
         private void dessinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -429,6 +481,22 @@ namespace Esgis_Paint
         #endregion
 
         #region METHODS
+
+        /// <summary>
+        /// Refresh the label witcch provide info about user action
+        /// </summary>
+        private void RefreshInformations()
+        {
+            if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
+            {                
+                label_Info.Text = "Papier vide !";
+            }
+            else
+            {
+                label_Info.Text = "Dessin en cours... ";
+            }
+        }
+
         private void RefreshSpecialForm_With(Image img)
         {
             specialForm_enabled = true;
@@ -463,9 +531,7 @@ namespace Esgis_Paint
                 {
                     bitm.Save(saveDialog.FileName);
                     log.writeSaveAction(saveDialog.FileName);
-                    //MessageBox.Show("Image enregistrée !");
                 }
-
             }
             catch (Exception e)
             {
@@ -475,7 +541,7 @@ namespace Esgis_Paint
         }
 
         /// <summary>
-        /// Open the windows used to draw
+        /// Open the windows used to draw a sketch
         /// </summary>
         private void OpenDrawWindows()
         {
@@ -520,17 +586,39 @@ namespace Esgis_Paint
         /// </summary>
         private void DisconnectApp()
         {
-            DialogResult exitresult = MessageBox.Show("Etes-vous sur de vouloir arrêter le dessin ?", "Quitter ? ", MessageBoxButtons.YesNo);
-            
-            if (exitresult == DialogResult.Yes)
+            if (drawing)
             {
-                log.writeDisconnectionAction();
-                Dispose();
+                DialogResult exitresult = MessageBox.Show("Un dessin est en cours ! Voulez-vous l'enregistrer ?", "Enregistrer ? ", MessageBoxButtons.YesNo);
+
+                if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
+                {
+                    SaveSketch();                    
+                }
             }
 
+            log.writeDisconnectionAction();
+            Dispose();
+        }
+
+        /// <summary>
+        /// Print the sketch on the panel
+        /// </summary>
+        private void PrintSketch()
+        {
+            printPreviewDialog1 = new PrintPreviewDialog();
+
+            printDialog1.Document = printDocument1;
+
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+                log.writePrintAction("Tmp Unsaved Sketch ");
+            }
         }
 
         #endregion
+
+        #region MENU
 
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -539,7 +627,36 @@ namespace Esgis_Paint
 
         private void imprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not implements yet !", "Sorry !");
+            PrintSketch();
         }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bitm = new Bitmap(panel1.Width, panel1.Height);
+            try
+            {
+                //Draw all point to Graphics
+                e.Graphics.DrawLines(pen, allPoints.ToArray());
+
+                //Drawing Images to Graphics
+                foreach (var item in allSpecialForms)
+                {
+                    e.Graphics.DrawImage(item._Image, item._Point);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Impossible d'imprimer un dessin vide");
+            }
+
+            e.Graphics.DrawImage(bitm, 0, 0);
+            bitm.Dispose();
+        }
+
+        #endregion
+        
     }
+
+    
 }

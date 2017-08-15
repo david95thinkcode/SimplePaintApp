@@ -137,6 +137,7 @@
     <None Include="Resources\Full Image_26px.png" />
     <None Include="Resources\Rectangle Stroked_32px.png" />
     <None Include="Resources\Circle_32px.png" />
+    <None Include="Resources\Print_32px.png" />
     <Content Include="res\Christmas Star_64px.png" />
     <None Include="res\Zoom In_32px.png" />
     <None Include="res\Zoom Out_32px.png" />
