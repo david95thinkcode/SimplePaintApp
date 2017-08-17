@@ -80,7 +80,6 @@ namespace Esgis_Paint
             SaveFileDialog saveDialog = new SaveFileDialog();
 
             saveDialog.Filter = "Image (*.PNG)|*.PNG";
-            //saveDialog.FilterIndex = 2;
             saveDialog.RestoreDirectory = true;
 
             //Showing and saving the picture
@@ -90,7 +89,7 @@ namespace Esgis_Paint
                 this.Text = saveDialog.FileName + " - Modifier une image"; ;
             }
 
-            log.writeSaveAction(saveDialog.FileName);
+            log.WriteToLogFile("save_pic", saveDialog.FileName);
         }
 
         private void btn_print_Click(object sender, EventArgs e)
@@ -102,7 +101,7 @@ namespace Esgis_Paint
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 printDocument1.Print();
-                log.writePrintAction(img.FullName);
+                log.WriteToLogFile("print", img.FullName);
             }
         }
         

@@ -526,11 +526,11 @@ namespace Esgis_Paint
                     bitGraphics.DrawImage(item._Image, item._Point);
                 }
 
-                //We name the image with words typed by the user
+                //Here we let the user enter the name for the file
                 if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
                     bitm.Save(saveDialog.FileName);
-                    log.writeSaveAction(saveDialog.FileName);
+                    log.WriteToLogFile("pic_save", saveDialog.FileName);
                 }
             }
             catch (Exception e)
@@ -601,7 +601,7 @@ namespace Esgis_Paint
         }
 
         /// <summary>
-        /// Print the sketch on the panel
+        /// Print the sketch/drawing on the panel
         /// </summary>
         private void PrintSketch()
         {
@@ -612,7 +612,7 @@ namespace Esgis_Paint
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 printDocument1.Print();
-                log.writePrintAction("Tmp Unsaved Sketch ");
+                log.WriteToLogFile("print", "Temp. unsaved Sketch");
             }
         }
 
