@@ -11,11 +11,16 @@ namespace Esgis_Paint.Models
     {
         public static StreamWriter flux = null;
 
+        const string CONNECT_ACTION = "connect";
+        const string DISCONNECT_ACTION = "disconnect";
+        const string PIC_SAVE_ACTION = "saveP";
+        const string PRINT_ACTION = "print";
+
         String _separator;
         String _filePath;
         StreamReader _reader;
         StreamWriter _writer;
-        
+
         public Journal()
         {
             _separator = " --> ";
@@ -23,24 +28,44 @@ namespace Esgis_Paint.Models
 
             //When the file does not exists, we create it and write inside it the head
             if (!File.Exists(_filePath)) 
-                writeHead();
+                WriteHead();
+        }
+
+        /// <summary>
+        /// Insert into the log file a specific action
+        /// </summary>
+        /// <param name="action">The action that we want to save into the log file</param>
+        public void WriteToLogFile(string action)
+        {
+            String data;
+
+            switch (action)
+            {
+                case CONNECT_ACTION:
+                    data = "Esgis_Paint started.";
+                    writeIntoLogFile(data);
+                    break;
+
+                case DISCONNECT_ACTION:
+                    data = "Esgis_Paint closed.";
+                    writeIntoLogFile(data);
+                    Console.WriteLine(" ");
+                    break;
+
+                case PIC_SAVE_ACTION:
+                    break;
+                case PRINT_ACTION:
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void openLogFile()
         {
-            //File.OpenRead(_filePath);
             System.Diagnostics.Process.Start(_filePath);
-
         }
-
-        public void writeConnectionAction()
-        {
-            String data;
-            data = "Esgis_Paint started.";
-            
-            writeIntoLogFile(data);
-        }
-
+        
         public void writePrintAction(string picturePath)
         {
             String data;
@@ -60,20 +85,11 @@ namespace Esgis_Paint.Models
 
             writeIntoLogFile(data);
         }
-
-        public void writeDisconnectionAction()
-        {
-            String data;
-            data = "Esgis_Paint closed.";
-
-            writeIntoLogFile(data);
-            Console.WriteLine(" ");
-        }
-
+        
         /// <summary>
         /// Write the title of columns on the head of log file
         /// </summary>
-        public void writeHead()
+        private void WriteHead()
         {
             String head = "DATE      " + " HOUR         " + "ACTION";
             String underline = "----      " + " ----         " + "------";
