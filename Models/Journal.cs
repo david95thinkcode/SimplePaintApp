@@ -9,16 +9,13 @@ namespace Esgis_Paint.Models
 {
     class Journal
     {
-        public static StreamWriter flux = null;
-
         const string CONNECT_ACTION = "connect";
         const string DISCONNECT_ACTION = "disconnect";
-        const string PIC_SAVE_ACTION = "saveP";
+        const string PIC_SAVE_ACTION = "pic_save";
         const string PRINT_ACTION = "print";
 
         String _separator;
         String _filePath;
-        StreamReader _reader;
         StreamWriter _writer;
 
         public Journal()
@@ -26,7 +23,7 @@ namespace Esgis_Paint.Models
             _separator = " --> ";
             _filePath = @"log.txt";
 
-            //When the file does not exists, we create it and write inside it the head
+            //When the file does not exists, we create it and insert inside it the head
             if (!File.Exists(_filePath)) 
                 WriteHead();
         }
@@ -43,18 +40,37 @@ namespace Esgis_Paint.Models
             {
                 case CONNECT_ACTION:
                     data = "Esgis_Paint started.";
-                    writeIntoLogFile(data);
+                    InsertToLogFile(data);
                     break;
-
                 case DISCONNECT_ACTION:
                     data = "Esgis_Paint closed.";
-                    writeIntoLogFile(data);
+                    InsertToLogFile(data);
                     Console.WriteLine(" ");
                     break;
+                default: //Nothing to do yet
+                    break;
+            }
+        }
 
+
+        /// <summary>
+        /// Insert into the log file a specific action
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="path">The path of the file witch is saved or printed </param>
+        public void WriteToLogFile(string action, string path)
+        {
+            String data;
+
+            switch (action)
+            {
                 case PIC_SAVE_ACTION:
+                    data = "Picture " + path + " saved ";
+                    InsertToLogFile(data);
                     break;
                 case PRINT_ACTION:
+                    data = "Picture " + path + " printed ";
+                    InsertToLogFile(data);
                     break;
                 default:
                     break;
@@ -65,27 +81,7 @@ namespace Esgis_Paint.Models
         {
             System.Diagnostics.Process.Start(_filePath);
         }
-        
-        public void writePrintAction(string picturePath)
-        {
-            String data;
-            data = "Picture " + picturePath + " printed ";
-
-            writeIntoLogFile(data);
-        }
-
-        /// <summary>
-        /// Write into log file save action
-        /// </summary>
-        /// <param name="picturePath">Path of saved Picture</param>
-        public void writeSaveAction(string picturePath)
-        {
-            String data;
-            data = "Picture " + picturePath + " saved ";
-
-            writeIntoLogFile(data);
-        }
-        
+                
         /// <summary>
         /// Write the title of columns on the head of log file
         /// </summary>
@@ -109,13 +105,15 @@ namespace Esgis_Paint.Models
             }
         }
 
-        private void writeIntoLogFile(String line)
-        {
-            /*
-             * On écrit la première partie de la ligne
-             * C'est à dire la date et l'heure
-             * Puis on y ajoute une chaine recu en paramètre 
-            */
+        /// <summary>
+        /// Insert Line of string to the log file
+        /// </summary>
+        /// <param name="line"></param>
+        private void InsertToLogFile(String line)
+        {            
+             // First, we insert datetime data
+             // Secondly, we add the parameter <line>
+
             DateTime currentTime = DateTime.Now;
             
             try
@@ -129,7 +127,7 @@ namespace Esgis_Paint.Models
             catch (Exception e)
             {
                 String error_message = "Failed to write in the log file. Details : " + e;
-                System.Windows.Forms.MessageBox.Show(error_message);
+                System.Windows.Forms.MessageBox.Show(error_message, "ERROR !");
             }
         }
     }
