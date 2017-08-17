@@ -285,7 +285,7 @@ namespace Esgis_Paint
             //TODO: Put the code inside a method and call it here
             if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
             {
-                log.writeDisconnectionAction();
+                log.WriteToLogFile("disconnect");
                 Dispose();
             }
             else
@@ -297,7 +297,7 @@ namespace Esgis_Paint
                     SaveSketch();
                 }
 
-                log.writeDisconnectionAction();
+                log.WriteToLogFile("disconnect");
                 Dispose();
             }
             //DisconnectApp();
@@ -415,7 +415,7 @@ namespace Esgis_Paint
         {
             if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
             {
-                log.writeDisconnectionAction();
+                log.WriteToLogFile("disconnect");
                 Dispose();
             }
             else
@@ -427,7 +427,7 @@ namespace Esgis_Paint
                     SaveSketch();
                 }
 
-                log.writeDisconnectionAction();
+                log.WriteToLogFile("disconnect");;
                 Dispose();
             }
         }
@@ -596,7 +596,7 @@ namespace Esgis_Paint
                 }
             }
 
-            log.writeDisconnectionAction();
+            log.WriteToLogFile("disconnect");;
             Dispose();
         }
 

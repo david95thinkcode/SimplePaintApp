@@ -20,7 +20,7 @@ namespace Esgis_Paint
         {
             InitializeComponent();
             log = new Journal();
-            log.writeConnectionAction();
+            log.WriteToLogFile("connect");
         }
 
         #region Events
@@ -145,7 +145,7 @@ namespace Esgis_Paint
 
             if (exitresult == DialogResult.Yes)
             {
-                log.writeDisconnectionAction();
+                log.WriteToLogFile("disconnect");
                 Dispose();
             }
         }
