@@ -122,7 +122,7 @@ namespace Esgis_Paint
                 FileInfo choice_info = new FileInfo(OpenFile_dialog.FileName);
 
                 //Calling modifyPic and sending to it the picture info
-                modifyPic modifPage = new modifyPic();
+                editPic modifPage = new editPic();
                 modifPage.getImage(choice_info);
                 modifPage.Show();
             }

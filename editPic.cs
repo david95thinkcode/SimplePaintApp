@@ -12,7 +12,7 @@ using Esgis_Paint.Models;
 
 namespace Esgis_Paint
 {
-    public partial class modifyPic : Form
+    public partial class editPic : Form
     {
 
         #region Variables
@@ -22,7 +22,7 @@ namespace Esgis_Paint
         Journal log; 
         #endregion
 
-        public modifyPic()
+        public editPic()
         {
             InitializeComponent();
             log = new Journal();

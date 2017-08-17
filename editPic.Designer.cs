@@ -1,6 +1,6 @@
 ﻿namespace Esgis_Paint
 {
-    partial class modifyPic
+    partial class editPic
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modifyPic));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editPic));
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.btn_flipVertical = new System.Windows.Forms.Button();
             this.btn_flipHorizontal = new System.Windows.Forms.Button();

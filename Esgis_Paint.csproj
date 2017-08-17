@@ -65,11 +65,11 @@
     </Compile>
     <Compile Include="Models\Journal.cs" />
     <Compile Include="Models\SpecialForm.cs" />
-    <Compile Include="modifyPic.cs">
+    <Compile Include="editPic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modifyPic.Designer.cs">
-      <DependentUpon>modifyPic.cs</DependentUpon>
+    <Compile Include="editPic.Designer.cs">
+      <DependentUpon>editPic.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +82,8 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modifyPic.resx">
-      <DependentUpon>modifyPic.cs</DependentUpon>
+    <EmbeddedResource Include="editPic.resx">
+      <DependentUpon>editPic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -165,6 +165,8 @@
     <None Include="res\Shutdown_32px_2.png" />
     <Content Include="res\Star_50px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UI\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
