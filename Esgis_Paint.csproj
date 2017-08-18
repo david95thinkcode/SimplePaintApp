@@ -45,44 +45,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutBox1.cs">
+    <Compile Include="UI\AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutBox1.Designer.cs">
+    <Compile Include="UI\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
-    <Compile Include="drawPic.cs">
+    <Compile Include="UI\drawPic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="drawPic.Designer.cs">
+    <Compile Include="UI\drawPic.Designer.cs">
       <DependentUpon>drawPic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="UI\Home.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="UI\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Journal.cs" />
     <Compile Include="Models\SpecialForm.cs" />
-    <Compile Include="editPic.cs">
+    <Compile Include="UI\editPic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="editPic.Designer.cs">
+    <Compile Include="UI\editPic.Designer.cs">
       <DependentUpon>editPic.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutBox1.resx">
+    <EmbeddedResource Include="UI\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="drawPic.resx">
+    <EmbeddedResource Include="UI\drawPic.resx">
       <DependentUpon>drawPic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="UI\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="editPic.resx">
+    <EmbeddedResource Include="UI\editPic.resx">
       <DependentUpon>editPic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,8 +165,6 @@
     <None Include="res\Shutdown_32px_2.png" />
     <Content Include="res\Star_50px.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
