@@ -76,20 +76,13 @@ namespace Esgis_Paint
 
         private void drawPic_Load(object sender, EventArgs e)
         {
-            //panel1.Height = (int) (0.75 * Screen.PrimaryScreen.Bounds.Height);
-            //panel1.Width = (int) (0.5 * Screen.PrimaryScreen.Bounds.Width);
-            //panel1.Size = new Size(panel1.Width, panel1.Height);
-
             // Changing the location of Left Control boxes
             groupBox_Outils.Location = new Point(groupBox_Outils.Location.X + 10, groupBox_Outils.Location.Y);
             groupBox_Formes.Location = new Point(groupBox_Formes.Location.X + 2, groupBox_Formes.Location.Y);
 
             // Changing the location of Right Control boxes
             int rightControlBoxes_X = groupBox_Outils.Width + panel1.Width + 70;            
-            //groupBox_Epaisseur.Location = new Point(rightControlBoxes_X, groupBox_Epaisseur.Location.Y);
-            //groupBox_Couleur.Location = new Point(rightControlBoxes_X, groupBox_Couleur.Location.Y);
-            //groupBox_Fichier.Location = new Point(rightControlBoxes_X, groupBox_Fichier.Location.Y);
-
+           
             this.Width = this.Width - 50;
 
             btn_ZoomIn.Enabled = false;
@@ -297,10 +290,8 @@ namespace Esgis_Paint
                     SaveSketch();
                 }
 
-                log.WriteToLogFile("disconnect");
                 Dispose();
             }
-            //DisconnectApp();
         }
 
         #endregion
