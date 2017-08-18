@@ -32,18 +32,47 @@ namespace Esgis_Paint
         {
         }
 
-        #region TRANSFORM Button
+        #region MENU
+
+        private void imprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Print();
+        }
+
+        private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenPicture();
+        }
+
+        private void fermerLimageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClosePicture();
+        }
+
+        #endregion
+
+        #region TRANSFORM Buttons
 
         private void btn_rotateLeft_Click(object sender, EventArgs e)
         {
-            refreshPictureBoxImage();
+            RefreshPictureBoxImage();
             pictureObj.RotateFlip(RotateFlipType.Rotate270FlipNone);
         }
 
         /// <summary>
         /// Refresh the pictureBox to apply changes
         /// </summary>
-        private void refreshPictureBoxImage()
+        private void RefreshPictureBoxImage()
         {
             pictureBox1.Image = pictureObj;
         }
@@ -51,19 +80,19 @@ namespace Esgis_Paint
         private void btn_rotateRight_Click(object sender, EventArgs e)
         {
             pictureObj.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            refreshPictureBoxImage();
+            RefreshPictureBoxImage();
         }
 
         private void btn_flipVertical_Click(object sender, EventArgs e)
         {
             pictureObj.RotateFlip(RotateFlipType.RotateNoneFlipX);
-            refreshPictureBoxImage();
+            RefreshPictureBoxImage();
         }
 
         private void btn_flipHorizontal_Click(object sender, EventArgs e)
         {
             pictureObj.RotateFlip(RotateFlipType.RotateNoneFlipY);
-            refreshPictureBoxImage();
+            RefreshPictureBoxImage();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -72,10 +101,34 @@ namespace Esgis_Paint
         }
 
         #endregion
+        
+        #region METHODS
 
-        #region OPTIONS Button
+        public void getImage(FileInfo imgInfo)
+        {
+            //Getting the picture stream
+            img = imgInfo;
+            picture_stream = img.OpenRead();
+            pictureObj = Image.FromStream(picture_stream);
 
-        private void btn_save_Click(object sender, EventArgs e)
+            this.Text = img.FullName + " - Modifier une image";
+
+            RefreshPictureBoxImage();
+
+            #region Enable some components
+            btn_flipHorizontal.Enabled = true;
+            btn_flipVertical.Enabled = true;
+            btn_rotateLeft.Enabled = true;
+            btn_rotateRight.Enabled = true;
+
+            //Menu items
+            enregistrerToolStripMenuItem.Enabled = true;
+            imprimerToolStripMenuItem.Enabled = true;
+            fermerLimageToolStripMenuItem.Enabled = true;
+            #endregion
+        }
+
+        public void Save()
         {
             SaveFileDialog saveDialog = new SaveFileDialog();
 
@@ -92,7 +145,7 @@ namespace Esgis_Paint
             log.WriteToLogFile("save_pic", saveDialog.FileName);
         }
 
-        private void btn_print_Click(object sender, EventArgs e)
+        public void Print()
         {
             printPreviewDialog1 = new PrintPreviewDialog();
 
@@ -104,25 +157,51 @@ namespace Esgis_Paint
                 log.WriteToLogFile("print", img.FullName);
             }
         }
-        
-        #endregion
-        
-        #region METHODS
 
-        public void getImage(FileInfo imgInfo)
+        /// <summary>
+        /// Open a picture a load it in the panel
+        /// </summary>
+        public void OpenPicture()
         {
-            //Getting the picture stream
-            img = imgInfo;
-            picture_stream = img.OpenRead();
-            pictureObj = Image.FromStream(picture_stream);
+            OpenFileDialog OpenFile_dialog = new OpenFileDialog();
 
-            this.Text = img.FullName + " - Modifier une image";
+            OpenFile_dialog.Title = "Choose a picture";
+            OpenFile_dialog.Multiselect = false;
+            OpenFile_dialog.Filter = "Images (*.BMP;*.JPG;*.PNG)|*.BMP;*.JPG;*.PNG";
 
-            refreshPictureBoxImage();
+            //Open the file dialog
+            if (OpenFile_dialog.ShowDialog() == DialogResult.OK)
+            {
+                FileInfo choice_info = new FileInfo(OpenFile_dialog.FileName);
+                getImage(choice_info);
+            }
+
+        }
+
+        /// <summary>
+        /// Remove the picture from the panel
+        /// </summary>
+        public void ClosePicture()
+        {
+            pictureObj = null;
+            RefreshPictureBoxImage();
+
+            #region Disable some components
+            btn_flipHorizontal.Enabled = false;
+            btn_flipVertical.Enabled = false;
+            btn_rotateLeft.Enabled = false;
+            btn_rotateRight.Enabled = false;
+
+            //Menu items
+            enregistrerToolStripMenuItem.Enabled = false;
+            imprimerToolStripMenuItem.Enabled = false;
+            fermerLimageToolStripMenuItem.Enabled = false; 
+            #endregion
         }
 
         #endregion
 
+        #region OTHERS
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             Bitmap bitm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -130,6 +209,8 @@ namespace Esgis_Paint
             pictureBox1.DrawToBitmap(bitm, new Rectangle(0, 0, pictureBox1.Width, pictureBox1.Height));
             e.Graphics.DrawImage(bitm, 0, 0);
             bitm.Dispose();
-        }
+        } 
+        #endregion
+
     }
 }
