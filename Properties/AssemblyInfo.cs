@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("Esgis_Paint")]
-[assembly: AssemblyDescription("Application minimaliste de dessin")]
+[assembly: AssemblyTitle("SimplePaintApp")]
+[assembly: AssemblyDescription("A minimalistic app to paint")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("David K. HIHEAGLO ")]
+[assembly: AssemblyCompany("david95thinkcode ")]
 [assembly: AssemblyProduct("Esgis_Paint")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]

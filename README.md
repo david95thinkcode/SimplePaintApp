@@ -25,9 +25,9 @@ I have shared this code for those interested in this kind of project. With C # c
 
 ### Prerequisites
 
-[Visual Studio IDE] (https://www.visualstudio.com)
+[Visual Studio IDE](https://www.visualstudio.com)
 
 ## Built With
 
 * [C# & .Net](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/)
-* [Visual Studio IDE] (https://www.visualstudio.com)
+* [Visual Studio IDE](https://www.visualstudio.com)
