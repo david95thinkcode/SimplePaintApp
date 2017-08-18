@@ -103,9 +103,9 @@ namespace Esgis_Paint.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancel_32px_1 {
+        internal static System.Drawing.Bitmap Cancel_32px {
             get {
-                object obj = ResourceManager.GetObject("Cancel_32px_1", resourceCulture);
+                object obj = ResourceManager.GetObject("Cancel_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,29 +153,9 @@ namespace Esgis_Paint.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Edit_32px_4 {
+        internal static System.Drawing.Bitmap Edit_32px {
             get {
-                object obj = ResourceManager.GetObject("Edit_32px_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Edit_80px_2 {
-            get {
-                object obj = ResourceManager.GetObject("Edit_80px_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Edit_80px_21 {
-            get {
-                object obj = ResourceManager.GetObject("Edit_80px_21", resourceCulture);
+                object obj = ResourceManager.GetObject("Edit_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,16 +166,6 @@ namespace Esgis_Paint.Properties {
         internal static System.Drawing.Bitmap Erase_32px {
             get {
                 object obj = ResourceManager.GetObject("Erase_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Eraser_80px {
-            get {
-                object obj = ResourceManager.GetObject("Eraser_80px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,16 +323,6 @@ namespace Esgis_Paint.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Print_52px {
-            get {
-                object obj = ResourceManager.GetObject("Print_52px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Rectangle_Stroked_32px {
             get {
                 object obj = ResourceManager.GetObject("Rectangle_Stroked_32px", resourceCulture);
@@ -383,9 +343,9 @@ namespace Esgis_Paint.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Rotate_Right_52px_1 {
+        internal static System.Drawing.Bitmap Rotate_Right_52px {
             get {
-                object obj = ResourceManager.GetObject("Rotate_Right_52px_1", resourceCulture);
+                object obj = ResourceManager.GetObject("Rotate_Right_52px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,26 +356,6 @@ namespace Esgis_Paint.Properties {
         internal static System.Drawing.Bitmap Save_32px {
             get {
                 object obj = ResourceManager.GetObject("Save_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Save_52px {
-            get {
-                object obj = ResourceManager.GetObject("Save_52px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Save_as_32px {
-            get {
-                object obj = ResourceManager.GetObject("Save_as_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,16 +376,6 @@ namespace Esgis_Paint.Properties {
         internal static System.Drawing.Bitmap Shutdown_32px {
             get {
                 object obj = ResourceManager.GetObject("Shutdown_32px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Shutdown_32px_2 {
-            get {
-                object obj = ResourceManager.GetObject("Shutdown_32px_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

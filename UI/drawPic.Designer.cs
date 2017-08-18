@@ -388,7 +388,7 @@
             // 
             // btn_pencil
             // 
-            this.btn_pencil.Image = global::Esgis_Paint.Properties.Resources.Edit_32px_4;
+            this.btn_pencil.Image = global::Esgis_Paint.Properties.Resources.Edit_32px;
             this.btn_pencil.Location = new System.Drawing.Point(16, 45);
             this.btn_pencil.Name = "btn_pencil";
             this.btn_pencil.Size = new System.Drawing.Size(45, 37);
@@ -618,7 +618,7 @@
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Cancel_32px_1;
+            this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Cancel_32px;
             this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_close.Location = new System.Drawing.Point(6, 125);
             this.btn_close.Name = "btn_close";

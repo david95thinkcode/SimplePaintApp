@@ -107,7 +107,7 @@
             // 
             // btn_rotateRight
             // 
-            this.btn_rotateRight.Image = global::Esgis_Paint.Properties.Resources.Rotate_Right_52px_1;
+            this.btn_rotateRight.Image = global::Esgis_Paint.Properties.Resources.Rotate_Right_52px;
             this.btn_rotateRight.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_rotateRight.Location = new System.Drawing.Point(12, 115);
             this.btn_rotateRight.Name = "btn_rotateRight";

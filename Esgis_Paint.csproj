@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UI\AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,11 +99,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -109,9 +109,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Zoom In_32px.png" />
+    <None Include="Resources\Zoom Out_32px.png" />
+    <None Include="Resources\Shutdown_32px.png" />
+    <None Include="Resources\Erase_32px.png" />
+    <None Include="Resources\Edit_32px.png" />
+    <None Include="Resources\Cancel_32px.png" />
+    <None Include="Resources\Rotate_64px.png" />
+    <None Include="Resources\Rotate Left_64px.png" />
+    <None Include="Resources\Rotate Right_52px.png" />
+    <None Include="Resources\Rotate Left_52px.png" />
+    <None Include="Resources\Save_32px.png" />
+    <None Include="Resources\More_32px_7.png" />
     <Content Include="screenshots\screenshot_1.jpg" />
     <None Include="README.md" />
-    <None Include="res\Cancel_32px_1.png" />
     <None Include="Resources\Africa_32px.png" />
     <None Include="Resources\Apple_32px.png" />
     <None Include="Resources\Bright Moon_32px.png" />
@@ -140,30 +151,6 @@
     <None Include="Resources\Rectangle Stroked_32px.png" />
     <None Include="Resources\Circle_32px.png" />
     <None Include="Resources\Print_32px.png" />
-    <Content Include="res\Christmas Star_64px.png" />
-    <None Include="res\Zoom In_32px.png" />
-    <None Include="res\Zoom Out_32px.png" />
-    <None Include="res\Edit_32px_4.png" />
-    <Content Include="res\Edit_80px_2.png" />
-    <Content Include="res\Eraser_80px.png" />
-    <None Include="res\Erase_32px.png" />
-    <Content Include="res\Hearts_Filled_52px.png" />
-    <Content Include="res\Hearts_64px.png" />
-    <Content Include="res\Menu_64px.png" />
-    <None Include="res\More_32px.png" />
-    <Content Include="res\Print_52px.png" />
-    <Content Include="res\Rectangle_50px.png" />
-    <Content Include="res\Rectangle_filled_52px.png" />
-    <Content Include="res\Rotate Left_52px.png" />
-    <Content Include="res\Rotate Right_52px_1.png" />
-    <None Include="res\Save as_32px.png" />
-    <None Include="res\Save_32px.png" />
-    <Content Include="res\Save_52px.png" />
-    <None Include="res\Sort Down_32px.png" />
-    <None Include="res\Sort Up_32px.png" />
-    <None Include="res\Shutdown_32px.png" />
-    <None Include="res\Shutdown_32px_2.png" />
-    <Content Include="res\Star_50px.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

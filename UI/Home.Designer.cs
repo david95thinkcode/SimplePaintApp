@@ -159,7 +159,7 @@
             this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Shutdown_32px_2;
+            this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Shutdown_32px;
             this.btn_close.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_close.Location = new System.Drawing.Point(415, 0);
             this.btn_close.Name = "btn_close";
