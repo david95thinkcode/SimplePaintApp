@@ -1,13 +1,15 @@
 ﻿# SimplePaintApp 
 
 This is an application that allows you to draw using the mouse. Very easy to use.
-I have shared this code for those interested in this kind of project. With C # combined with the .Net framework, coding this program seems really simple. I hope it will help you
+With C# combined with the .Net framework, coding this program seems really simple. 
+If you want to start this kind of project with using C#, so this will be useful for you.
+I hope it will help you.
 
 ## Snapshoot
 
 ![Hi !](screenshots/screenshot_1.jpg "Drawing something")
 
-## Functionalities 
+## What can you do with SimplePaintApp ? 
 
 - Draw what you want with your mouse
 - Choose your pencil color and your pencil size, no limit about that
@@ -16,12 +18,6 @@ I have shared this code for those interested in this kind of project. With C # c
 - Print your drawing 
 - Edit an existing image (only Rotation & Transformation are available)
 - Save a modified image
-
-### Coming soon
-
-- Drawing directly special shapes
-- Fill the drawing background
-- More options about editing an existing picture and drawing picture
 
 ### Prerequisites
 
