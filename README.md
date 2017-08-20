@@ -5,7 +5,7 @@ With C# combined with the .Net framework, coding this program seems really simpl
 If you want to start this kind of project with using C#, so this will be useful for you.
 I hope it will help you.
 
-## Snapshoot
+## Screenshoot
 
 ![Hi !](screenshots/screenshot_1.jpg "Drawing something")
 
